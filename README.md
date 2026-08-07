@@ -21,10 +21,19 @@ python -m http.server 8000
 - `styles.css` — 共通デザイン
 - `script.js` / `detail.js` — 一覧の絞り込みと詳細表示
 
-## GitHub Pagesへ公開
+## Cloudflare Pagesへ公開
 
-1. GitHubリポジトリの **Settings → Pages** を開く
-2. **Source** に **GitHub Actions** を選ぶ
-3. `main` ブランチへpushする
+Cloudflare DashboardからGitHubリポジトリを接続します。
 
-`.github/workflows/deploy-pages.yml` が自動でサイトを公開します。
+1. **Workers & Pages → Create → Pages → Connect to Git** を開く
+2. `papaiku-open-research-lab/summer-research-ideas` を選ぶ
+3. デプロイ設定を次のようにする
+   - Production branch: `main`
+   - Framework preset: `None`
+   - Build command: 空欄
+   - Build output directory: `/`
+4. **Save and Deploy** を押す
+
+以後は`main`ブランチへのpushごとに自動デプロイされます。
+
+`_headers`ではCloudflare Pages用のセキュリティヘッダーと静的ファイルのキャッシュを設定しています。
