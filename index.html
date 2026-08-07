@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AIを答え合わせではなく研究の相棒に。親子で楽しめる夏休みの自由研究アイデア集。">
+  <meta name="theme-color" content="#fffaf0">
+  <title>AIと発見！夏休み自由研究ラボ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#ideas">研究ネタ一覧へ移動</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="AIと発見！夏休み自由研究ラボ ホーム">
+      <span class="brand-mark" aria-hidden="true">🔎</span>
+      <span><b>AIと発見！</b><small>夏休み自由研究ラボ</small></span>
+    </a>
+    <nav aria-label="メインナビゲーション">
+      <a href="#ideas">研究ネタ</a>
+      <a href="#howto">進め方</a>
+      <a href="#safety">AIの約束</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>☀️</span> この夏、親子でやってみよう</p>
+        <h1>「なんで？」が、<br><em>研究のはじまり。</em></h1>
+        <p class="hero-lead">AIに答えを作ってもらうだけじゃ、もったいない。<br>観察して、くらべて、失敗して。AIを相棒に、自分だけの発見を見つけよう！</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#ideas">研究ネタを見つける <span>→</span></a>
+          <a class="text-link" href="#howto">はじめてのAI研究ガイド</a>
+        </div>
+        <ul class="hero-facts" aria-label="サイトの特徴">
+          <li><b id="hero-idea-count">29</b><span>研究アイデア</span></li>
+          <li><b>1〜6</b><span>年生向け</span></li>
+          <li><b>親子</b><span>で楽しめる</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-label="子どもたちがAIロボットと研究しているイラスト">
+        <div class="sun" aria-hidden="true">☀</div>
+        <div class="cloud cloud-one" aria-hidden="true"></div>
+        <div class="cloud cloud-two" aria-hidden="true"></div>
+        <div class="hero-note note-one" aria-hidden="true">なぜ？</div>
+        <div class="hero-note note-two" aria-hidden="true">発見！</div>
+        <div class="hero-characters" aria-hidden="true">
+          <div class="kid kid-left">🧒🏻<span class="tool">🔭</span></div>
+          <div class="robot">🤖<span class="spark">✦</span></div>
+          <div class="kid kid-right">👧🏻<span class="tool">📝</span></div>
+        </div>
+        <div class="hero-ground"><span>🌱</span><span>🌼</span><span>🌱</span><span>🪨</span></div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="研究で大切にすること">
+      <p><span>👀 よく見る</span><span>💭 予想する</span><span>🧪 ためす</span><span>📊 くらべる</span><span>✨ 発見する</span></p>
+    </section>
+
+    <section class="ideas-section" id="ideas">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>🧪</span> RESEARCH IDEAS</p>
+          <h2>どんな研究をしてみたい？</h2>
+          <p>気になるカードを選ぶと、進め方やAIへの質問例が見られます。</p>
+        </div>
+        <div class="result-count" aria-live="polite"><b id="result-count">9</b> 件のアイデア</div>
+      </div>
+      <div class="idea-controls">
+        <label class="search-box">
+          <span aria-hidden="true">🔎</span>
+          <span class="visually-hidden">研究ネタをキーワードで検索</span>
+          <input id="idea-search" type="search" placeholder="宇宙、音楽、実験などで検索">
+        </label>
+        <div class="filters" role="group" aria-label="研究ネタを種類で絞り込む">
+          <button class="filter active" type="button" data-category="all">🌈 すべて</button>
+          <button class="filter" type="button" data-category="つくる">🎨 つくる</button>
+          <button class="filter" type="button" data-category="くらべる">⚖️ くらべる</button>
+          <button class="filter" type="button" data-category="しらべる">🔎 しらべる</button>
+          <button class="filter" type="button" data-category="ためす">🧪 ためす</button>
+        </div>
+      </div>
+      <div class="idea-grid" id="idea-grid"></div>
+      <p class="empty-message" id="empty-message" hidden>条件に合う研究が見つかりません。別の言葉や種類で探してみよう。</p>
+    </section>
+
+    <section class="howto-section" id="howto">
+      <div class="section-heading centered">
+        <p class="eyebrow"><span>🗺️</span> HOW TO RESEARCH</p>
+        <h2>AI自由研究、5つのステップ</h2>
+        <p>「自分で考える」を真ん中に置くと、AIは最高の研究パートナーになります。</p>
+      </div>
+      <ol class="steps-overview">
+        <li><span class="step-number">1</span><div class="step-icon">❓</div><h3>ふしぎを選ぶ</h3><p>自分が「なんで？」と思うテーマを決める</p></li>
+        <li><span class="step-number">2</span><div class="step-icon">💭</div><h3>先に予想する</h3><p>AIに聞く前に、自分の考えを書く</p></li>
+        <li><span class="step-number">3</span><div class="step-icon">🤖</div><h3>AIと相談する</h3><p>質問を工夫して、アイデアを広げる</p></li>
+        <li><span class="step-number">4</span><div class="step-icon">🧪</div><h3>自分で確かめる</h3><p>観察・実験・本で本当か調べる</p></li>
+        <li><span class="step-number">5</span><div class="step-icon">📣</div><h3>発見を伝える</h3><p>失敗も含めて、自分の言葉でまとめる</p></li>
+      </ol>
+    </section>
+
+    <section class="safety-section" id="safety">
+      <div class="safety-illustration" aria-hidden="true">
+        <span class="shield">🛡️</span>
+        <span class="mini-robot">🤖</span>
+      </div>
+      <div>
+        <p class="eyebrow"><span>✅</span> AI SAFETY PROMISE</p>
+        <h2>AIと研究するときの<br>3つの約束</h2>
+      </div>
+      <ul class="safety-list">
+        <li><span>1</span><p><b>個人情報は入れない</b>名前、住所、学校、顔写真などはAIに送らない。</p></li>
+        <li><span>2</span><p><b>答えをうのみにしない</b>AIも間違えます。本や公式サイト、実験で確かめよう。</p></li>
+        <li><span>3</span><p><b>使ったことを隠さない</b>どこでAIを使い、どう自分で考えたかを書こう。</p></li>
+      </ul>
+    </section>
+
+    <section class="message-section">
+      <div class="message-card">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <p>うまくいかなかった実験も、<br><strong>「なぜ？」を考えたら立派な発見。</strong></p>
+        <span>親子で試して、話して、夏の作品を育てよう。</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">🔎</span>
+      <p><b>AIと発見！夏休み自由研究ラボ</b><small>パパ育コミュの子どもたちへ</small></p>
+    </div>
+    <p>AIと人が一緒につくる、親子の学びのきっかけ。</p>
+    <p class="copyright">© 2026 パパ育コミュ オープンリサーチラボ</p>
+  </footer>
+</body>
+</html>
