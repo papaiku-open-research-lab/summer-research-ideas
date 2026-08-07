@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=50">
-  <script src="data.js?v=50" defer></script>
-  <script src="script.js?v=50" defer></script>
+  <link rel="stylesheet" href="styles.css?v=51">
+  <script src="data.js?v=51" defer></script>
+  <script src="script.js?v=51" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#ideas">研究ネタ一覧へ移動</a>
@@ -20,7 +20,12 @@
       <span class="brand-mark" aria-hidden="true">🔎</span>
       <span><b>AIと発見！</b><small>夏休み自由研究ラボ</small></span>
     </a>
-    <nav aria-label="メインナビゲーション">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="main-navigation" aria-label="メインナビゲーション">
       <a href="#ideas">研究ネタ</a>
       <a href="#howto">進め方</a>
       <a href="#safety">AIの約束</a>

@@ -16,7 +16,42 @@ const grid = document.querySelector("#idea-grid");
 const resultCount = document.querySelector("#result-count");
 const emptyMessage = document.querySelector("#empty-message");
 const searchInput = document.querySelector("#idea-search");
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector(".site-nav");
 let activeCategory = "all";
+
+function closeMenu() {
+  if (!menuToggle || !siteNav) return;
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "メニューを開く");
+  siteNav.classList.remove("open");
+  document.body.classList.remove("nav-open");
+}
+
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+    menuToggle.setAttribute("aria-expanded", String(willOpen));
+    menuToggle.setAttribute("aria-label", willOpen ? "メニューを閉じる" : "メニューを開く");
+    siteNav.classList.toggle("open", willOpen);
+    document.body.classList.toggle("nav-open", willOpen);
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 700) closeMenu();
+  });
+}
 
 function createCard(idea) {
   const article = document.createElement("article");
